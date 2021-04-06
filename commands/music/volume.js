@@ -4,7 +4,7 @@ module.exports = class Volume extends Command{
     constructor(client){
         super(client, {
             name: 'volume',
-            args: true,
+            args: false,
             usage: '(1-100)',
             description: 'Mudar volume',
             aliases: ['vol'],
