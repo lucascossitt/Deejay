@@ -31,7 +31,7 @@ module.exports = class Move extends Command{
             if(!para) return message.quote('Coloque a posição para onde você deseja mover a musica.')
             if(typeof player.queue[dee] === 'undefined') return message.quote('Coloque o numero de uma musica valida.')
             message.quote('Você moveu a musica `' + player.queue[dee].title + '` para a posição `' + para + '`')
-            arraymove(player.queue, dee, paraa)
+            this.arraymove(player.queue, dee, paraa)
 
         } catch (error) {
             client.errorMessage(error, this, message)

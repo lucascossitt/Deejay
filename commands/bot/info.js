@@ -22,8 +22,8 @@ module.exports = class Info extends Command{
         try {
 
             let node = client.music.nodes.first().stats
-            let u = convertMS(client.uptime);
-            let ul = convertMS(node.uptime)
+            let u = this.convertMS(client.uptime);
+            let ul = this.convertMS(node.uptime)
             let uptime = u.d === 0 ? `${u.h}h ${u.m}m ${u.s}s` : `${u.d}d ${u.h}h ${u.m}m ${u.s}s`
             let uptimeLava = ul.d === 0 ? `${ul.h}h ${ul.m}m ${ul.s}s` : `${ul.d}d ${ul.h}h ${ul.m}m ${ul.s}s`
             const embed = new Discord.MessageEmbed()
