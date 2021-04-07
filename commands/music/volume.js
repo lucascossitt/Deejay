@@ -21,7 +21,7 @@ module.exports = class Volume extends Command{
         try {
             
             const player = message.guild.player
-            const volume = parsetInt(args[0])
+            const volume = parseInt(args[0])
 
             if(!volume){
                 message.quote(`Volume atual: \`${player.volume}\``)

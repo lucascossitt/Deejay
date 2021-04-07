@@ -20,7 +20,7 @@ module.exports = class Ping extends Command{
         try {
 
             const msg = await message.quote(`Pingando...`)
-            return msg.edit(`Latencia: \`${msg.createdTimestamp - message.createdTimestamp}ms\`\nLatencia da API: \`${Math.round(client.ws.ping)}ms\``)
+            return msg.edit(`Latencia do bot: \`${msg.createdTimestamp - message.createdTimestamp}ms\`\nLatencia da API: \`${Math.round(client.ws.ping)}ms\``)
         
         } catch (error) {
             client.errorMessage(error, this, message)

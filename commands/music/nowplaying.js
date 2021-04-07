@@ -1,5 +1,6 @@
 const Command = require('../../structures/Command')
 const TimeUtils = require('../../structures/TimeUtils')
+const Discord = require('discord.js')
 
 module.exports = class nowPlaying extends Command{
     constructor(client){
