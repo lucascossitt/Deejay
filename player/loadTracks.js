@@ -1,7 +1,7 @@
 const ytsr = require('ytsr')
 const Discord = require('discord.js')
 
-module.exports = async(client, message, player, searchQuery) => {
+module.exports = async(client, message, player, searchQuery, first) => {
 
     let tries = 0
 
@@ -21,12 +21,16 @@ module.exports = async(client, message, player, searchQuery) => {
                     .setDescription(`Adicionado a queue: \`${res.tracks[0].title}\`\nDuração: \`${res.tracks[0].isStream ? 'Livestream' : `${client.transformarTempo(res.tracks[0].duration)}`}\`\nAdicionador por: ${message.author}`)
                     message.quote(embed)
                 }
-
-                player.queue.add(res.tracks[0])
+                if(first){
+                    player.queue.splice(0, 0, res.tracks[0])
+                } else {
+                    player.queue.add(res.tracks[0])
+                }
                 if(!player.playing && !player.paused && !player.queue.length) player.play()
 
             } else if(res.loadType == 'PLAYLIST_LOADED'){
 
+                if(first) return message.quote('Não se pode colocar playlists por primeiro.')
                 for(const track of res.tracks){
                     player.queue.add(track)
                     if(!player.playing && !player.paused && !player.queue.length) player.play()

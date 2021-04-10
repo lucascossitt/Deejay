@@ -2,14 +2,14 @@ const Command = require('../../structures/Command')
 const play = require('../../player/loadTracks')
 const spawnPlayer = require('../../player/spawnPlayer')
 
-module.exports = class Play extends Command{
+module.exports = class PlayFirst extends Command{
     constructor(client){
         super(client, {
-            name: 'play',
+            name: 'playfirst',
             args: true,
             usage: '(link ou nome da musica)',
-            description: 'Tocar musica',
-            aliases: ['p', 'tocar'],
+            description: 'Tocar musica por primeiro',
+            aliases: ['pf', 'tocarprimeiro'],
             enabled: true,
             inVoiceChannel: true,
             sameVoiceChannel: true,
@@ -32,7 +32,7 @@ module.exports = class Play extends Command{
             if(!message.guild.me.voice.channel && message.member.voice.channel.members.size === message.member.voice.channel.userLimit && !permissions.has('MOVE_MEMBERS')) return message.quote('O canal esta cheio.')
     
             let searchQuery = args.join(' ')
-            play(client, message, player, searchQuery, false)
+            play(client, message, player, searchQuery, true)
 
         } catch (error) {
             client.errorMessage(error, this, message)
