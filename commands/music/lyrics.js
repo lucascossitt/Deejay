@@ -57,7 +57,7 @@ module.exports = class Lyrics extends Command{
             let page = 1
             let pages = Math.ceil(lyric.lyrics.length / 20)
             const embed = new Discord.MessageEmbed()
-            .setColor('#B54ADB')
+            .setColor('#000000')
             .setTitle(titulo)
             .setDescription(lyric.lyrics.slice(0, 20).join('\n'))
             .setTimestamp()

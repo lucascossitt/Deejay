@@ -25,7 +25,7 @@ module.exports = class nowPlaying extends Command{
             const player = message.guild.player
             const current = player.queue.current
             const embed = new Discord.MessageEmbed()
-            .setColor('#B54ADB')
+            .setColor('#000000')
             .setTitle(`${current.title}`)
             .setURL(current.uri)
             .setThumbnail(current.thumbnail)

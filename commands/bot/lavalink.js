@@ -33,9 +33,8 @@ module.exports = class Lavalink extends Command{
             const botUptime = this.uptime(uptime);
 
             const embed = new Discord.MessageEmbed()
-            .setColor('#B54ADB')
+            .setColor('#000000')
             .setTimestamp()
-            .setFooter('Lab Music')
             .setDescription(`Informações do node \`${client.music.nodes.first().options.identifier}\`\nUptime: \`${botUptime}\`\nCPU: \n> Cores: \`${cpu.cores}\`\n> Uso: \`${systemLoad}%\`\n> Uso lavalink: \`${lavalinkLoad}%\`\nMemória: \n> Alocada: \`${allocated}MB\`\n> Usada: \`${used}MB\`\n> Livre: \`${free}MB\`\n> Reservada: \`${reservable}MB\``)
 
             if(frameStats){

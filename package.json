@@ -1,5 +1,5 @@
 {
-  "name": "labmusic",
+  "name": "deejay",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,20 +11,20 @@
   "dependencies": {
     "@discordjs/opus": "^0.5.0",
     "bufferutil": "^4.0.3",
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.1",
     "cheerio": "*",
     "discord.js": "^12.5.3",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "erela.js": "^2.3.3",
     "erela.js-spotify": "^1.2.0",
     "erlpack": "github:discord/erlpack",
     "is-absolute-url": "^3.0.3",
     "moment": "^2.29.1",
-    "mongoose": "^5.12.3",
+    "mongoose": "^5.12.7",
     "node-fetch": "^2.6.1",
     "sodium": "^3.0.2",
-    "utf-8-validate": "^5.0.4",
-    "ytsr": "^3.4.0",
+    "utf-8-validate": "^5.0.5",
+    "ytsr": "^3.4.1",
     "zlib-sync": "^0.1.7"
   }
 }

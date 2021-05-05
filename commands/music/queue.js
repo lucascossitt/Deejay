@@ -28,9 +28,8 @@ module.exports = class Queue extends Command{
             const paginator = new Paginator({elements: player.queue, length: 10})
         
             const embed = new Discord.MessageEmbed()
-            .setColor('#B54ADB')
+            .setColor('#000000')
             .setTitle('Fila de musicas')
-            .setFooter('Lab Music')
             .setTimestamp()
             .setDescription(`Tocando agora: \`${player.queue.current.title}\`\n\nSem mais musicas`)
         

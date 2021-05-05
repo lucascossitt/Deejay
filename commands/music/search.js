@@ -45,7 +45,7 @@ module.exports = class Search extends Command{
             if(loadType === 'SEARCH_RESULT' || loadType === 'TRACK_LOADED'){
                 escolhendo.push(message.author.id)
                 const embedSearch = new Discord.MessageEmbed()
-                .setColor('#B54ADB')
+                .setColor('#000000')
                 .setDescription(`Resultados para: \`${musicQuery}\`\n\n${tracks.map((a, i) => `**${i + 1} -** \`${a.title}\``).slice(0, 10).join('\n')}`)
                 .setFooter('Selecione um numero de 1 a 10 de acordo com o resultado ou digite cancelar para cancelar! (Tempo: 15 segundos)')
                 message.quote(embedSearch).then(async msg => {
@@ -58,9 +58,8 @@ module.exports = class Search extends Command{
                         } else if(coletado.content > 0 && coletado.content < 11){
                             collector.stop()
                             const embed = new Discord.MessageEmbed()
-                            .setColor('#B54ADB')
+                            .setColor('#000000')
                             .setTimestamp()
-                            .setFooter('Lab Music')
                             .setDescription(`Adicionado a queue: \`${tracks[Number(coletado.content) - 1].title}\`\nDuração: \`${tracks[Number(coletado.content) - 1].isStream ? 'Livestream' : `${client.transformarTempo(tracks[Number(coletado.content) - 1].duration)}`}\`\nAdicionador por: ${tracks[Number(coletado.content) - 1].requester}`)
                             if(player.queue.current) message.quote(embed)
                             player.queue.add(tracks[Number(coletado.content) - 1])

@@ -15,9 +15,8 @@ module.exports = async(client, message, player, searchQuery, first) => {
 
                 if(player.queue.current){
                     const embed = new Discord.MessageEmbed()
-                    .setColor('#B54ADB')
+                    .setColor('#000000')
                     .setTimestamp()
-                    .setFooter('Lab Music')
                     .setDescription(`Adicionado a queue: \`${res.tracks[0].title}\`\nDuração: \`${res.tracks[0].isStream ? 'Livestream' : `${client.transformarTempo(res.tracks[0].duration)}`}\`\nAdicionador por: ${message.author}`)
                     message.quote(embed)
                 }
@@ -37,9 +36,8 @@ module.exports = async(client, message, player, searchQuery, first) => {
                 }
 
                 const embed = new Discord.MessageEmbed()
-                .setColor('#B54ADB')
+                .setColor('#000000')
                 .setTimestamp()
-                .setFooter('Lab Music')
                 .setDescription(`Playlist carregada: \`${res.playlist.name}\`\nQuantidade de musicas: \`${res.tracks.length}\`\nAdicionador por: ${message.author}`)
                 message.quote(embed)
             }

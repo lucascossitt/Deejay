@@ -33,10 +33,6 @@ var Config = new Schema({
     manu: {
         type: Boolean,
         default: false
-    },
-    guildsLiberadas: {
-        type: Array,
-        default: []
     }
 })
 var User = new Schema({

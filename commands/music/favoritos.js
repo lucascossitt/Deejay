@@ -31,15 +31,14 @@ module.exports = class Favoritos extends Command{
                 const musicas = userDb.favoritos
                 const paginator = new Paginator({elements: musicas, length: 10})
                 const embed = new Discord.MessageEmbed()
-                .setColor('#B54ADB')
+                .setColor('#000000')
                 .setTimestamp()
-                .setFooter('Lab Music')
                 .setTitle('Sua lista de musicas favoritas:')
-                .setDescription(`\`lm.favoritos add\` - Adiciona a musica que esta tocando a sua lista de favoritos.\n\`lm.favoritos remove\` - Remove uma musica da sua lista de favoritos.\n\`lm.favoritos play\` - Toca uma musica da sua lista de favoritos.\n\nSem musicas`)
+                .setDescription(`\`-favoritos add\` - Adiciona a musica que esta tocando a sua lista de favoritos.\n\`-favoritos remove\` - Remove uma musica da sua lista de favoritos.\n\`-favoritos play\` - Toca uma musica da sua lista de favoritos.\n\nSem musicas`)
         
                 if(musicas.length >= 1){
                     embed.setFooter('Página ' + paginator.pages.actual + ' de ' + paginator.pages.total)
-                    embed.setDescription(`\`lm.favoritos add\` - Adiciona a musica que esta tocando a sua lista de favoritos.\n\`lm.favoritos remove\` - Remove uma musica da sua lista de favoritos.\n\`lm.favoritos play\` - Toca uma musica da sua lista de favoritos.\n\n${paginator.get(false).map(mapSongs.bind(null, paginator)).join('\n')}`)
+                    embed.setDescription(`\`-favoritos add\` - Adiciona a musica que esta tocando a sua lista de favoritos.\n\`-favoritos remove\` - Remove uma musica da sua lista de favoritos.\n\`-favoritos play\` - Toca uma musica da sua lista de favoritos.\n\n${paginator.get(false).map(mapSongs.bind(null, paginator)).join('\n')}`)
                 }
                 const msg = await message.channel.send(embed)
                 if(musicas.length <= 10) return
@@ -60,7 +59,7 @@ module.exports = class Favoritos extends Command{
                         const isFirstPage = paginator.pages.actual === 1
                         const songs = paginator.get(isFirstPage)
               
-                        embed.setDescription(`\`lm.favoritos add\` - Adiciona a musica que esta tocando a sua lista de favoritos.\n\`lm.favoritos remove\` - Remove uma musica da sua lista de favoritos.\n\`lm.favoritos play\` - Toca uma musica da sua lista de favoritos.\n\n${paginator.get(false).map(mapSongs.bind(null, paginator)).join('\n')}`)
+                        embed.setDescription(`\`-favoritos add\` - Adiciona a musica que esta tocando a sua lista de favoritos.\n\`-favoritos remove\` - Remove uma musica da sua lista de favoritos.\n\`-favoritos play\` - Toca uma musica da sua lista de favoritos.\n\n${paginator.get(false).map(mapSongs.bind(null, paginator)).join('\n')}`)
                         embed.setFooter('Página ' + paginator.pages.actual + ' de ' + paginator.pages.total)
             
                         r.users.remove(message.author.id).catch(err => {})
@@ -71,7 +70,7 @@ module.exports = class Favoritos extends Command{
                       case emojis[1]: {
                         const songs = paginator.nextPage().get()
             
-                        embed.setDescription(`\`lm.favoritos add\` - Adiciona a musica que esta tocando a sua lista de favoritos.\n\`lm.favoritos remove\` - Remove uma musica da sua lista de favoritos.\n\`lm.favoritos play\` - Toca uma musica da sua lista de favoritos.\n\n${paginator.get(false).map(mapSongs.bind(null, paginator)).join('\n')}`)
+                        embed.setDescription(`\`-favoritos add\` - Adiciona a musica que esta tocando a sua lista de favoritos.\n\`-favoritos remove\` - Remove uma musica da sua lista de favoritos.\n\`-favoritos play\` - Toca uma musica da sua lista de favoritos.\n\n${paginator.get(false).map(mapSongs.bind(null, paginator)).join('\n')}`)
                         embed.setFooter('Página ' + paginator.pages.actual + ' de ' + paginator.pages.total)
               
                         r.users.remove(message.author.id).catch(err => {})
@@ -89,7 +88,7 @@ module.exports = class Favoritos extends Command{
                 const player = message.guild.player
                 const mscAtual = player.queue.current
                 if(userDb.favoritos.find(a => a.identifier === mscAtual.identifier)){
-                    message.quote('Esta musica ja esta na sua lista de favoritas. Caso deseja remove-la, utilize `lm.favoritos remove`.')
+                    message.quote('Esta musica ja esta na sua lista de favoritas. Caso deseja remove-la, utilize `-favoritos remove`.')
                 } else {
                     userDb.favoritos.push({identifier: mscAtual.identifier, title: mscAtual.title})
                     userDb.save()
@@ -126,9 +125,8 @@ module.exports = class Favoritos extends Command{
                 if(canal.id !== player.voiceChannel) return message.quote('Você não esta no mesmo canal que eu estou tocando.')
         
                 const embed = new Discord.MessageEmbed()
-                .setColor('#B54ADB')
+                .setColor('#000000')
                 .setTimestamp()
-                .setFooter('Lab Music')
                 .setDescription(`Adicionado a queue: \`${tracks[0].title}\`\nDuração: \`${tracks[0].isStream ? 'Livestream' : `${client.transformarTempo(tracks[0].duration)}`}\`\nAdicionador por: ${tracks[0].requester}`)
                 if(player.queue.current) message.quote(embed)
                 player.queue.add(tracks[0])

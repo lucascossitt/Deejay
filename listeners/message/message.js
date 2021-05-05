@@ -68,7 +68,15 @@ module.exports = class Message extends Event{
             if(!userDb){
                 const newUser = new Database.Users({_id: message.author.id})
                 newUser.save()
-                client.log(chalk.green.bold('[DATABASE] ') + chalk.white.bold(`${message.author.user.name} salvo na database.`))
+                client.log(chalk.green.bold('[DATABASE] ') + chalk.white.bold(`${message.author.name} salvo na database.`))
+            }
+            if(!guildDb){
+                const newGuild = new Database.Guilds({_id: message.guild.id})
+                newGuild.save()
+            }
+            if(!configDb){
+                const newConfig = new Database.Configs({_id: client.user.id})
+                newConfig.save()
             }
 
             if(configDb.manu && !message.author.id === client.config.owner) return message.react('❌')

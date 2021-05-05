@@ -27,7 +27,7 @@ module.exports = class Config extends Command{
         
             if(!args[0]){
                 const embed = new Discord.MessageEmbed()
-                .setColor('#B54ADB')
+                .setColor('#000000')
                 .setTitle('Minhas configurações no servidor:')
                 .setFooter('Opções de configurações disponiveis: set/lock/ban')
                 .setTimestamp()
