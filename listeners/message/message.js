@@ -101,7 +101,6 @@ module.exports = class Message extends Event{
             try {
                 cmd.run(client, message, args)
                 client.cmdUsado += 1
-                client.channels.cache.get(client.config.comandosChannel).send(`Comando usado: \`${cmd.name}\`\n\`\`\`Guild: ${message.guild.name}(${message.guild.id})\nUsuario: ${message.author.tag}(${message.author.id})\nData: ${moment(Date.now()).format('LLLL')}\`\`\``)
             } catch (error) {
                 client.errorMessage(error, cmd, message)
             }
