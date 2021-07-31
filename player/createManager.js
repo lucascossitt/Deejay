@@ -9,7 +9,7 @@ const trackError = require('./events/trackError.js')
 
 module.exports = async (client) => {
     client.music = new Manager({
-        nodes: [{ identifier: 'VPS1', host: process.env.hostLava, port: 2333, password: process.env.passLava }, {identifier: 'VPS2', host: process.env.hostLava2, port: 2333, password: process.env.passLava}],
+        nodes: [{ identifier: 'VPS1', host: process.env.hostLava, port: 2333, password: process.env.passLava }],
         plugins: [
             new Spotify({
                 clientID: process.env.sptfClientId,
