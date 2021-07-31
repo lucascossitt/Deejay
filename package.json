@@ -11,7 +11,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
     "bufferutil": "^4.0.3",
-    "chalk": "^4.1.1",
+    "chalk": "^4.1.2",
     "cheerio": "*",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
@@ -20,11 +20,12 @@
     "erlpack": "github:discord/erlpack",
     "is-absolute-url": "^3.0.3",
     "moment": "^2.29.1",
-    "mongoose": "^5.12.14",
+    "mongoose": "^5.13.4",
     "node-fetch": "^2.6.1",
     "sodium": "^3.0.2",
     "utf-8-validate": "^5.0.5",
-    "ytsr": "^3.4.1",
-    "zlib-sync": "^0.1.7"
+    "ytsr": "^3.5.0",
+    "zlib-sync": "^0.1.7",
+    "@discordjs/voice": "^0.5.5"
   }
 }
