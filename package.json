@@ -9,7 +9,7 @@
   "author": "Luquinhas#0625",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/opus": "^0.5.3",
+    "@discordjs/opus": "^0.6.0",
     "bufferutil": "^4.0.3",
     "chalk": "^4.1.2",
     "cheerio": "*",
@@ -18,14 +18,14 @@
     "erela.js": "^2.3.3",
     "erela.js-spotify": "^1.2.0",
     "erlpack": "github:discord/erlpack",
-    "is-absolute-url": "^3.0.3",
+    "is-absolute-url": "^4.0.1",
     "moment": "^2.29.1",
-    "mongoose": "^5.13.4",
-    "node-fetch": "^2.6.1",
+    "mongoose": "^6.0.5",
+    "node-fetch": "^3.0.0",
     "sodium": "^3.0.2",
     "utf-8-validate": "^5.0.5",
-    "ytsr": "^3.5.0",
+    "ytsr": "^3.5.3",
     "zlib-sync": "^0.1.7",
-    "@discordjs/voice": "^0.5.5"
+    "@discordjs/voice": "^0.6.0"
   }
 }
